@@ -1,0 +1,22 @@
+[versions]
+lombok = "1.18.34"
+annotations = "24.1.0"
+quala-bom = "1.0.11-RELEASE"
+
+cloud-api = "1.0.8-RELEASE"
+cloud-base = "1.0.8-RELEASE"
+cloud-plugin = "1.0.8-RELEASE"
+
+paper = "1.21.1-R0.1-SNAPSHOT"
+
+[libraries]
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+annotations = { group = "org.jetbrains", name = "annotations", version.ref = "annotations" }
+
+quala-bom = { group = "dev.golgolex", name = "quala-bom", version.ref = "quala-bom" }
+
+paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
+
+cloud-api = { group = "dev.golgolex.golgocloud", name = "api", version.ref = "cloud-api" }
+cloud-base = { group = "dev.golgolex.golgocloud", name = "base", version.ref = "cloud-base" }
+cloud-plugin = { group = "dev.golgolex.golgocloud", name = "plugin", version.ref = "cloud-plugin" }
