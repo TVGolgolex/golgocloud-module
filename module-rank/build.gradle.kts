@@ -41,5 +41,5 @@ publishing {
 }
 
 tasks.shadowJar {
-    archiveFileName.set("veranity-paper-helper.jar")
+    archiveFileName.set("golgocloud-rank-module.jar")
 }

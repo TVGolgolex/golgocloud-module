@@ -1,0 +1,5 @@
+name: RankModulePlugin
+author: GolgolexTV
+version: 1.0
+api-version: "1.21.1"
+main: dev.golgolex.golgocloud.rank.plugin.RankModulePlugin
