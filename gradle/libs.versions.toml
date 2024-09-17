@@ -3,9 +3,9 @@ lombok = "1.18.34"
 annotations = "24.1.0"
 quala-bom = "1.0.11-RELEASE"
 
-cloud-api = "1.0.8-RELEASE"
-cloud-base = "1.0.8-RELEASE"
-cloud-plugin = "1.0.8-RELEASE"
+cloud-api = "1.0.11-RELEASE"
+cloud-base = "1.0.11-RELEASE"
+cloud-plugin = "1.0.11-RELEASE"
 
 paper = "1.21.1-R0.1-SNAPSHOT"
 
