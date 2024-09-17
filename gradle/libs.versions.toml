@@ -5,6 +5,7 @@ quala-bom = "1.0.11-RELEASE"
 
 cloud-api = "1.0.11-RELEASE"
 cloud-base = "1.0.11-RELEASE"
+cloud-instance = "1.0.11-RELEASE"
 cloud-plugin = "1.0.11-RELEASE"
 
 paper = "1.21.1-R0.1-SNAPSHOT"
@@ -19,4 +20,5 @@ paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" 
 
 cloud-api = { group = "dev.golgolex.golgocloud", name = "api", version.ref = "cloud-api" }
 cloud-base = { group = "dev.golgolex.golgocloud", name = "base", version.ref = "cloud-base" }
+cloud-instance = { group = "dev.golgolex.golgocloud", name = "instance", version.ref = "cloud-instance" }
 cloud-plugin = { group = "dev.golgolex.golgocloud", name = "plugin", version.ref = "cloud-plugin" }
