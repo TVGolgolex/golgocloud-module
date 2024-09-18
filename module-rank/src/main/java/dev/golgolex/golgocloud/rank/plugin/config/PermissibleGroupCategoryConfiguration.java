@@ -1,5 +1,6 @@
 package dev.golgolex.golgocloud.rank.plugin.config;
 
+import com.google.common.reflect.TypeToken;
 import dev.golgolex.golgocloud.cloudapi.CloudAPI;
 import dev.golgolex.golgocloud.common.configuration.ConfigurationClass;
 import dev.golgolex.golgocloud.common.permission.CloudPermissibleGroup;
@@ -26,5 +27,10 @@ public final class PermissibleGroupCategoryConfiguration extends ConfigurationCl
                         .findFirst()
                         .orElseThrow().uuid())))
         )));
+    }
+
+    public List<PermissibleGroupCategory> categories() {
+        return this.configuration().readObject("categories", new TypeToken<List<PermissibleGroupCategory>>() {
+        }.getType());
     }
 }
