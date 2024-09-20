@@ -26,7 +26,7 @@ public final class PermissibleGroupCategoryConfiguration extends ConfigurationCl
                         .filter(CloudPermissibleGroup::defaultGroup)
                         .findFirst()
                         .orElseThrow().uuid())))
-        )));
+        ))).write("inventory-size", 3 * 9);
     }
 
     public List<PermissibleGroupCategory> categories() {

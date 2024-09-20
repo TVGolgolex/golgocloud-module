@@ -10,6 +10,7 @@ dependencies {
     compileOnly(libs.cloud.plugin)
     compileOnly(libs.lombok)
     compileOnly(libs.paper)
+    compileOnly(libs.authlib)
     annotationProcessor(libs.lombok)
 }
 

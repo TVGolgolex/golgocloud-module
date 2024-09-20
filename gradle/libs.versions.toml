@@ -3,12 +3,14 @@ lombok = "1.18.34"
 annotations = "24.1.0"
 quala-bom = "1.0.11-RELEASE"
 
-cloud-api = "1.0.11-RELEASE"
-cloud-base = "1.0.11-RELEASE"
-cloud-instance = "1.0.11-RELEASE"
-cloud-plugin = "1.0.11-RELEASE"
+cloud-api = "1.0.12-RELEASE"
+cloud-base = "1.0.12-RELEASE"
+cloud-instance = "1.0.12-RELEASE"
+cloud-plugin = "1.0.12-RELEASE"
 
 paper = "1.21.1-R0.1-SNAPSHOT"
+
+authlib = "3.13.56"
 
 [libraries]
 lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
@@ -22,3 +24,5 @@ cloud-api = { group = "dev.golgolex.golgocloud", name = "api", version.ref = "cl
 cloud-base = { group = "dev.golgolex.golgocloud", name = "base", version.ref = "cloud-base" }
 cloud-instance = { group = "dev.golgolex.golgocloud", name = "instance", version.ref = "cloud-instance" }
 cloud-plugin = { group = "dev.golgolex.golgocloud", name = "plugin", version.ref = "cloud-plugin" }
+
+authlib = { group = "com.mojang", name = "authlib", version.ref = "authlib" }
