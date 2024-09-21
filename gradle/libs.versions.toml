@@ -1,7 +1,7 @@
 [versions]
 lombok = "1.18.34"
 annotations = "24.1.0"
-quala-bom = "1.0.11-RELEASE"
+quala-bom = "1.0.13-RELEASE"
 
 cloud-api = "1.0.12-RELEASE"
 cloud-base = "1.0.12-RELEASE"

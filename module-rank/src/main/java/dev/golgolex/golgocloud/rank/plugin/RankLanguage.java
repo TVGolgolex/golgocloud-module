@@ -31,6 +31,39 @@ public class RankLanguage implements TranslationClass {
         );
     }
 
+    @Bounding(system = "cloud-module-rank", folder = "ingame-inventory-rank-add_or_set", type = Bounding.Type.FOLDER)
+    public List<Input> onInventoryRankAddOrSetIngame() {
+        return Arrays.asList(
+                new Input("displayname-rank-add", "<dark_gray>»</dark_gray> <color:#9af821><b>Add rank</b></color>"),
+                new Input("lore-line-rank-add-1", "<gray>Add the selected rank to its existing ranks.</gray>"),
+                new Input("lore-line-rank-add-2", "<gray>This does not affect the other ranks.</gray>"),
+
+                new Input("displayname-rank-set", "<dark_gray>»</dark_gray> <color:#ffff2f><b>Set rank</b></color>"),
+                new Input("lore-line-rank-set-1", "<gray>The other ranks are deleted and only</gray>"),
+                new Input("lore-line-rank-set-2", "<gray>the new one is added.</gray>")
+        );
+    }
+
+    @Bounding(system = "cloud-module-rank", folder = "ingame-inventory-rank-operation", type = Bounding.Type.FOLDER)
+    public List<Input> onInventoryOperationIngame() {
+        return Arrays.asList(
+                new Input("displayname-reset-player", "<color:#ff2100><b>Reset player</b></color>"),
+                new Input("displayname-remove-permissible-group", "<color:#8764ff><b>Removing ranks</b></color>")
+        );
+    }
+
+    @Bounding(system = "cloud-module-rank", folder = "ingame-inventory-rank-add_remove_time", type = Bounding.Type.FOLDER)
+    public List<Input> onInventoryAddReoveTimeIngame() {
+        return Arrays.asList(
+                new Input("lore-line-time-add-1", ""),
+                new Input("lore-line-time-add-2", "<dark_gray>»</dark_gray> <white><u>Right-click</u></white> <gray>to increase</gray> <color:#ffe525>+1</color>"),
+                new Input("lore-line-time-add-3", "<dark_gray>»</dark_gray> <white><u>Shift-right click</u></white> <gray>to increase</gray> <color:#ffe525>+10</color>"),
+                new Input("lore-line-time-add-4", ""),
+                new Input("lore-line-time-add-5", "<dark_gray>»</dark_gray> <white><u>Left-click</u></white> <gray>to decrease</gray> <color:#ffe525>-1</color>"),
+                new Input("lore-line-time-add-6", "<dark_gray>»</dark_gray> <white><u>Shift-left-click</u></white> <gray>to decrease</gray> <color:#ffe525>-10</color>")
+        );
+    }
+
     @Bounding(system = "cloud-module-rank", folder = "global-time-units", type = Bounding.Type.FOLDER)
     public List<Input> onGlobalTimeUnits() {
         return Arrays.asList(

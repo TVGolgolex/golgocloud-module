@@ -2,9 +2,12 @@ package dev.golgolex.golgocloud.rank.plugin.inventory;
 
 import com.destroystokyo.paper.profile.ProfileProperty;
 import dev.golgolex.golgocloud.cloudapi.CloudAPI;
+import dev.golgolex.golgocloud.common.user.CloudPlayer;
 import dev.golgolex.golgocloud.plugin.paper.CloudPaperPlugin;
 import dev.golgolex.golgocloud.rank.plugin.config.PermissibleGroupCategoryConfiguration;
+import dev.golgolex.golgocloud.rank.plugin.listener.InventoryListener;
 import dev.golgolex.golgocloud.rank.util.TimeConverter;
+import dev.golgolex.quala.translation.basic.Language;
 import dev.golgolex.quala.translation.basic.TextUtil;
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
@@ -13,6 +16,7 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -25,13 +29,17 @@ import java.util.Arrays;
 import java.util.UUID;
 
 @Getter
-public final class CategoryOverviewInventory {
+public final class CategoryOverviewInventory implements RankInventory {
 
     private final Player player;
     private final UUID target;
+    private CloudPlayer targetCloudPlayer;
+    private Language language;
+    private ItemStack playerItemStack;
     private Inventory inventory;
 
-    public CategoryOverviewInventory(@NotNull Player player, @NotNull UUID target) {
+    public CategoryOverviewInventory(@NotNull Player player,
+                                     @NotNull UUID target) {
         this.player = player;
         this.target = target;
 
@@ -105,6 +113,47 @@ public final class CategoryOverviewInventory {
                 itemStack.setItemMeta(leatherMeta);
                 this.inventory.setItem(category.invSlot(), itemStack);
             }
+
+            this.targetCloudPlayer = cloudPlayer;
+            this.language = language;
+            this.playerItemStack = playerItemStack;
         });
+
+        InventoryListener.getInventoryMap().put(player.getUniqueId(), this);
+    }
+
+    @Override
+    public Inventory inventory() {
+        return this.inventory;
+    }
+
+    @Override
+    public void onClick(InventoryClickEvent event) {
+        if (event.getSlot() == 4) {
+            player.closeInventory();
+            player.openInventory(new PlayerOperationInventory(player,
+                    targetCloudPlayer,
+                    language,
+                    playerItemStack
+            ).inventory());
+            return;
+        }
+
+        CloudPaperPlugin.instance().instanceConfigurationService().configurationOptional("permissible-groups-categories").ifPresent(permissibleGroupCategories -> {
+            var config = (PermissibleGroupCategoryConfiguration) permissibleGroupCategories;
+
+            for (var category : config.categories()) {
+                if (event.getSlot() == category.invSlot()) {
+                    player.closeInventory();
+                    player.openInventory(new RanksCategoryInventory(player,
+                            targetCloudPlayer,
+                            category,
+                            language,
+                            playerItemStack)
+                            .inventory());
+                }
+            }
+        });
+
     }
 }
