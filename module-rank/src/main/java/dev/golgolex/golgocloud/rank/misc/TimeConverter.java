@@ -1,4 +1,4 @@
-package dev.golgolex.golgocloud.rank.util;
+package dev.golgolex.golgocloud.rank.misc;
 
 
 

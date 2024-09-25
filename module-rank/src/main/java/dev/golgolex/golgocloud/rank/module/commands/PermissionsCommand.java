@@ -3,7 +3,7 @@ package dev.golgolex.golgocloud.rank.module.commands;
 import dev.golgolex.golgocloud.base.CloudBase;
 import dev.golgolex.golgocloud.common.permission.CloudPermissibleUser;
 import dev.golgolex.golgocloud.common.permission.PermissionStructure;
-import dev.golgolex.golgocloud.rank.util.TimeConverter;
+import dev.golgolex.golgocloud.rank.misc.TimeConverter;
 import dev.golgolex.quala.command.*;
 import org.jline.reader.Candidate;
 

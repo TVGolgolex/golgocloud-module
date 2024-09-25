@@ -6,7 +6,7 @@ import dev.golgolex.golgocloud.common.user.CloudPlayer;
 import dev.golgolex.golgocloud.plugin.paper.CloudPaperPlugin;
 import dev.golgolex.golgocloud.rank.plugin.config.PermissibleGroupCategoryConfiguration;
 import dev.golgolex.golgocloud.rank.plugin.listener.InventoryListener;
-import dev.golgolex.golgocloud.rank.util.TimeConverter;
+import dev.golgolex.golgocloud.rank.misc.TimeConverter;
 import dev.golgolex.quala.translation.basic.Language;
 import dev.golgolex.quala.translation.basic.TextUtil;
 import lombok.Getter;
