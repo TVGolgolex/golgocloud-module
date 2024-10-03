@@ -2,10 +2,10 @@ package dev.golgolex.golgocloud.rank.plugin.config;
 
 import com.google.common.reflect.TypeToken;
 import dev.golgolex.golgocloud.cloudapi.CloudAPI;
-import dev.golgolex.golgocloud.common.configuration.ConfigurationClass;
 import dev.golgolex.golgocloud.common.permission.CloudPermissibleGroup;
 import dev.golgolex.golgocloud.rank.plugin.PermissibleGroupCategory;
 import dev.golgolex.quala.common.json.JsonDocument;
+import dev.golgolex.quala.config.json.JsonConfiguration;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public final class PermissibleGroupCategoryConfiguration extends ConfigurationClass {
+public final class PermissibleGroupCategoryConfiguration extends JsonConfiguration {
     public PermissibleGroupCategoryConfiguration(@NotNull File configurationDirectory) {
         super("permissible-groups-categories", configurationDirectory);
     }

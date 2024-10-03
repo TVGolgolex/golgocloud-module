@@ -78,7 +78,6 @@ public class ServerListPingListener implements Listener {
         }
 
         var config = advancedBrandingPlugin.getAdvancedConfiguration().readJsonDocument(serverBrandStyle.name().toLowerCase());
-
         var iconPath = config.readString("server-icon-file-path");
         if (iconPath != null && !iconPath.isEmpty()) {
             try {
@@ -105,7 +104,6 @@ public class ServerListPingListener implements Listener {
                         }.getType()));
                         bottomLine = this.randomEntryFormList(config.readObject("motd-line-bottom", new TypeToken<List<String>>() {
                         }.getType()));
-
                         List<String> onlineProtocols = config.readObject("protocol-line", new TypeToken<List<String>>() {
                         }.getType());
                         if (!onlineProtocols.isEmpty()) {
