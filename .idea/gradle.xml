@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/module-advanced_branding" />
             <option value="$PROJECT_DIR$/module-friend" />
             <option value="$PROJECT_DIR$/module-rank" />
           </set>

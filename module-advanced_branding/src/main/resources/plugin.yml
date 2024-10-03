@@ -1,0 +1,6 @@
+name: AdvancedBrandingPlugin
+author: GolgolexTV
+version: 1.0
+api-version: "1.21.1"
+main: dev.golgolex.golgocloud.advancedbranding.plugin.AdvancedBrandingPlugin
+depend: [ "CloudPlugin" ]

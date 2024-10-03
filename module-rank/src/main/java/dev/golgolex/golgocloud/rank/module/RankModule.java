@@ -12,7 +12,9 @@ import java.io.File;
 
 public class RankModule extends Module {
 
-    public RankModule(@NotNull ModuleProperties moduleProperties, @NotNull File modulesDirectory, @Nullable ModuleLogger moduleLogger) {
+    public RankModule(@NotNull ModuleProperties moduleProperties,
+                      @NotNull File modulesDirectory,
+                      @Nullable ModuleLogger moduleLogger) {
         super(moduleProperties, modulesDirectory, moduleLogger);
     }
 
