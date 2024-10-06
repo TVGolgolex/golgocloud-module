@@ -41,12 +41,11 @@ public class AdvancedBrandingPlugin extends JavaPlugin {
                 "golgocloud:internal:modules",
                 "receive-advanced-branding-configurations",
                 jsonDocument -> {
-                    if (!jsonDocument.contains("requester-id") && !jsonDocument.readString("requester-id")
+                    if (jsonDocument.contains("requester-id") && jsonDocument.readString("requester-id")
                             .equalsIgnoreCase(CloudPaperPlugin.instance().thisServiceUUID().toString())) {
-                        return;
+                        this.advancedConfiguration = jsonDocument.readJsonDocument(CloudPaperPlugin.instance().thisGroupName().toLowerCase());
+                        this.getLogger().log(Level.INFO, "Received updated AdvancedConfiguration");
                     }
-                    this.advancedConfiguration = jsonDocument.readJsonDocument(CloudPaperPlugin.instance().thisGroupName().toLowerCase());
-                    this.getLogger().log(Level.INFO, "Received updated AdvancedConfiguration");
                 }));
 
         this.reloadConfigurations();
