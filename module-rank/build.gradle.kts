@@ -11,17 +11,18 @@ dependencies {
     compileOnly(libs.lombok)
     compileOnly(libs.paper)
     compileOnly(libs.authlib)
+    compileOnly(libs.netty.api)
     annotationProcessor(libs.lombok)
 }
 
 publishing {
     repositories {
         maven {
-            name = "lumesolutions"
+            name = "claymc-network"
             url = uri(
                 if (version.toString().endsWith("SNAPSHOT"))
-                    "https://repository02.lumesolutions.de/repository/lumesolutions-intern-snapshot/" else
-                    "https://repository02.lumesolutions.de/repository/lumesolutions-intern-release/"
+                    "https://repository02.lumesolutions.de/repository/claymc-network-dev/" else
+                    "https://repository02.lumesolutions.de/repository/claymc-network-production/"
             )
             credentials {
                 username = project.findProperty("lumesolutions_user") as String?

@@ -15,8 +15,16 @@ allprojects {
 
     repositories {
         maven {
-            name = "lumesolutions"
-            url = uri("https://repository02.lumesolutions.de/repository/lumesolutions-intern-release/")
+            name = "claymc-network"
+            url = uri("https://repository02.lumesolutions.de/repository/claymc-network-production/")
+            credentials {
+                username = project.findProperty("lumesolutions_user") as String?
+                password = project.findProperty("lumesolutions_password") as String?
+            }
+        }
+        maven {
+            name = "lumesolutions-public"
+            url = uri("https://repository02.lumesolutions.de/repository/lumesolutions-public-productive/")
             credentials {
                 username = project.findProperty("lumesolutions_user") as String?
                 password = project.findProperty("lumesolutions_password") as String?

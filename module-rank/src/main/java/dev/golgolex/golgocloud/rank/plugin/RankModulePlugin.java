@@ -12,11 +12,13 @@ public class RankModulePlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        CloudPaperPlugin.instance().instanceConfigurationService().addConfiguration(new PermissibleGroupCategoryConfiguration(
-                CloudPaperPlugin.instance().instanceConfigurationService().configurationDirectory()
-        ));
+        CloudAPI.instance().nettyClient().connectionFuture().thenAccept(_ -> {
+            CloudPaperPlugin.instance().instanceConfigurationService().addConfiguration(new PermissibleGroupCategoryConfiguration(
+                    CloudPaperPlugin.instance().instanceConfigurationService().configurationDirectory()
+            ));
 
-        TranslationsManager.registerListener(RankLanguage.class, CloudAPI.instance().translationAPI());
+            TranslationsManager.registerListener(RankLanguage.class, CloudAPI.instance().translationAPI());
+        });
         CloudPaperPlugin.instance().paperCommandService().registerCommand(new RankCommand());
 
         this.getServer().getPluginManager().registerEvents(new InventoryListener(), this);

@@ -1,28 +1,28 @@
 [versions]
 lombok = "1.18.34"
 annotations = "24.1.0"
-quala-bom = "1.0.13-RELEASE"
+quala-bom = "1.0.17-RELEASE"
+netty-api ="1.0.9"
 
-cloud-api = "1.0.14-RELEASE"
-cloud-base = "1.0.14-RELEASE"
-cloud-instance = "1.0.14-RELEASE"
-cloud-plugin = "1.0.14-RELEASE"
+cloud-api = "1.0.18-RELEASE"
+cloud-base = "1.0.18-RELEASE"
+cloud-instance = "1.0.18-RELEASE"
+cloud-plugin = "1.0.18-RELEASE"
 
 paper = "1.21.1-R0.1-SNAPSHOT"
-
 authlib = "3.13.56"
 
 [libraries]
 lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
 annotations = { group = "org.jetbrains", name = "annotations", version.ref = "annotations" }
 
-quala-bom = { group = "dev.golgolex", name = "quala-bom", version.ref = "quala-bom" }
-
+authlib = { group = "com.mojang", name = "authlib", version.ref = "authlib" }
 paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
 
+quala-bom = { group = "dev.golgolex", name = "quala-bom", version.ref = "quala-bom" }
 cloud-api = { group = "dev.golgolex.golgocloud", name = "api", version.ref = "cloud-api" }
 cloud-base = { group = "dev.golgolex.golgocloud", name = "base", version.ref = "cloud-base" }
 cloud-instance = { group = "dev.golgolex.golgocloud", name = "instance", version.ref = "cloud-instance" }
 cloud-plugin = { group = "dev.golgolex.golgocloud", name = "plugin", version.ref = "cloud-plugin" }
+netty-api = { group = "de.lumesolutions.netty5-api", name = "netty5-connection", version.ref = "netty-api" }
 
-authlib = { group = "com.mojang", name = "authlib", version.ref = "authlib" }

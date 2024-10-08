@@ -37,18 +37,20 @@ public class AdvancedBrandingPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        CloudAPI.instance().messagingHandler().runListener(new ChannelMessageListener(
-                "golgocloud:internal:modules",
-                "receive-advanced-branding-configurations",
-                jsonDocument -> {
-                    if (jsonDocument.contains("requester-id") && jsonDocument.readString("requester-id")
-                            .equalsIgnoreCase(CloudPaperPlugin.instance().thisServiceUUID().toString())) {
-                        this.advancedConfiguration = jsonDocument.readJsonDocument(CloudPaperPlugin.instance().thisGroupName().toLowerCase());
-                        this.getLogger().log(Level.INFO, "Received updated AdvancedConfiguration");
-                    }
-                }));
+        CloudAPI.instance().nettyClient().connectionFuture().thenAccept(_ -> {
+            CloudAPI.instance().messagingHandler().runListener(new ChannelMessageListener(
+                    "golgocloud:internal:modules",
+                    "receive-advanced-branding-configurations",
+                    jsonDocument -> {
+                        if (jsonDocument.contains("requester-id") && jsonDocument.readString("requester-id")
+                                .equalsIgnoreCase(CloudPaperPlugin.instance().thisServiceUUID().toString())) {
+                            this.advancedConfiguration = jsonDocument.readJsonDocument(CloudPaperPlugin.instance().thisGroupName().toLowerCase());
+                            this.getLogger().log(Level.INFO, "Received updated AdvancedConfiguration");
+                        }
+                    }));
 
-        this.reloadConfigurations();
+            this.reloadConfigurations();
+        });
 
         Bukkit.getPluginManager().registerEvents(new ServerListPingListener(this), this);
     }
